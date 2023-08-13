@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Manghuhula</title>
+  </head>
+  <body>
+    <p>Huhulaan ko kung ilan ang magiging anak mo!</p>
+    <p>bago ang lahat kompletuhin mo muna ang mga sumusunod..</p>
+    <p>siguraduhing tama at kumpleto ang lahat ng detalye</p>
+    <input
+      placeholder="lagay mo name mo"
+      class="name"
+      onkeydown="nameEnter()"
+    />
+    <button onclick="clickName()" class="submit">Submit</button>
+    <p class="nameResult"></p>
+    <input
+      placeholder="lagay mo apelyido mo"
+      class="sur"
+      onkeydown="surEnter()"
+    />
+    <button onclick="clickSur()" class="submit">Submit</button>
+    <p class="surResult"></p>
+
+    <input
+      placeholder="lagay mo fav color mo"
+      class="favColor"
+      onkeydown="favColorEnter()"
+    />
+    <button onclick="clickFavColor()" class="submit">Submit</button>
+    <p class="favColorResult"></p>
+
+    <script>
+      function clickName() {
+        let nameSubmit = document.querySelector(".name");
+        let submittedName = nameSubmit.value;
+        let outcome = document.querySelector(".nameResult");
+
+        if (submittedName === "Ian" || submittedName === "ian") {
+          outcome.innerHTML = "What a wonderful name.";
+        } else if (submittedName === "") {
+          outcome.innerHTML = "pangit ba pangalan mo? Bat ayaw mo ialagay!?";
+        } else if (submittedName === "Hadrian" || submittedName === "hadrian") {
+          outcome.innerHTML = "What a beautiful name.";
+        } else if (submittedName === "Gavin" || submittedName === "gavin") {
+          outcome.innerHTML = "Such a wonderful name.";
+        } else if (
+          submittedName === "Axellerosh" ||
+          submittedName === "axellerosh" ||
+          submittedName === "axel" ||
+          submittedName === "Axel"
+        ) {
+          outcome.innerHTML = "Sanaol maganda pangalan";
+        } else {
+          outcome.innerHTML = "nangyan tanggalin monga, sama tingnan e.";
+        }
+      }
+
+      function nameEnter() {
+        if (event.key === "Enter") {
+          clickName();
+        }
+      }
+
+      function clickSur() {
+        let surSubmit = document.querySelector(".sur");
+        let submittedSur = surSubmit.value;
+        let outcome = document.querySelector(".surResult");
+
+        if (submittedSur === "lodor" || submittedSur === "Lodor") {
+          outcome.innerHTML = "Isa sa pinaka magandang apelyido para sakin.";
+        } else if (submittedSur === "") {
+          outcome.innerHTML =
+            "nakalagay nanga sa instruction na dapat kumpleto e, pag sa ulaga talaga";
+        } else if (submittedSur === "Dolor" || submittedSur === "dolor") {
+          outcome.innerHTML =
+            "kahit baliktarin mopa ang mundo di magbabago ang pagtingin ko sayo.";
+        } else {
+          outcome.innerHTML = "paremove nalang ulit please lang";
+        }
+      }
+      function surEnter() {
+        if (event.key === "Enter") {
+          clickSur();
+        }
+      }
+
+      function clickFavColor() {
+        let favColorSubmit = document.querySelector(".favColor");
+        let submittedColor = favColorSubmit.value;
+        let outcome = document.querySelector(".favColorResult");
+
+        if (submittedColor === "blue" || submittedColor === "Blue") {
+          outcome.innerHTML = "Same!";
+        } else if (submittedColor === "") {
+          outcome.innerHTML = "aba lagyan morin to!";
+        } else if (submittedColor === "pink" || submittedColor === "Pink") {
+          outcome.innerHTML = "Nice choice!.";
+        } else if (submittedColor === "Orange" || submittedColor === "orange") {
+          outcome.innerHTML = "Bisaya.";
+        } else if (submittedColor === "red") {
+          outcome.innerHTML = "Bet ko rin yan";
+        } else {
+          outcome.innerHTML = `${submittedColor}, nice taste! `;
+        }
+      }
+
+      function favColorEnter() {
+        if (event.key === "Enter") {
+          clickFavColor();
+        }
+      }
+    </script>
+  </body>
+</html>
